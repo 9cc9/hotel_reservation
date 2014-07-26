@@ -14,6 +14,10 @@ module HotelReservation
   require 'hotel_reservation/command/parameter/base'
   require 'hotel_reservation/command/parameter/help_parameter'
   require 'hotel_reservation/command/parameter/reserve_parameter'
+
+  require 'hotel_reservation/command/base'
+  require 'hotel_reservation/command/reserve'
+  require 'hotel_reservation/command/help'
   require 'hotel_reservation/command/factory/parameter_factory'
 
   require 'hotel_reservation/estate/hotel'
