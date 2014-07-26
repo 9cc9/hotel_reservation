@@ -1,6 +1,8 @@
-class ChargeService
+module Service
+  class ChargeService
 
-  def initialize
+    def initialize
 
+    end
   end
 end
