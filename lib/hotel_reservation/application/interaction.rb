@@ -3,7 +3,7 @@ module Application
   class Interaction
     def initialize(importer)
       @importer = importer
-      @controller = Controller.new
+      @controller = Dispatcher.new
     end
 
     def start

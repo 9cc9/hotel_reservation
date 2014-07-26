@@ -9,13 +9,13 @@ module Command
       def initialize(line)
         case line
           when 'help'
-            @command_type = "#{line}_parameter"
+            @command_type = line
             @argument = ''
           when /^Regular/, /^Rewards/
-            @command_type = 'reserve_parameter'
+            @command_type = 'reserve'
             @argument = line
           else
-            @command_type = 'error_parameter'
+            @command_type = 'error'
             @argument = ''
         end
       end
