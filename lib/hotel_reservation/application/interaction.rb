@@ -1,8 +1,8 @@
-require 'hotel_reservation/command/parameter/parameter_factory'
 
 module Application
   class Interaction
-    def initialize
+    def initialize(importer)
+      @importer = importer
       @controller = Controller.new
     end
 
@@ -16,10 +16,8 @@ module Application
 
     private
     def run
-      while line = gets
-        Log::Record.logger.debug "From stdin: #{line}"
-        break if 'quit'.eql?(line.chomp) || 'exit'.eql?(line.chomp)
-        @controller.handle_command(line)
+      @importer.each do |command_line|
+        @controller.handle_command(command_line)
       end
     end
   end

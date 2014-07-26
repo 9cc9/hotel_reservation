@@ -7,14 +7,13 @@ module Command
                   :argument
 
       def initialize(line)
-        command_line = line.chomp
-        case command_line
+        case line
           when 'help'
-            @command_type = "#{command_line}_parameter"
+            @command_type = "#{line}_parameter"
             @argument = ''
           when /^Regular/, /^Rewards/
             @command_type = 'reserve_parameter'
-            @argument = command_line
+            @argument = line
           else
             @command_type = 'error_parameter'
             @argument = ''

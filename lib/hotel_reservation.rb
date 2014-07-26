@@ -5,6 +5,7 @@ module HotelReservation
 
   require 'hotel_reservation/utils/configure'
   require 'hotel_reservation/utils/log/record'
+  require 'hotel_reservation/utils/importer/text_importer'
 
   require 'hotel_reservation/command/helper/splitter'
   require 'hotel_reservation/command/parameter/base'
@@ -16,6 +17,7 @@ module HotelReservation
   require 'hotel_reservation/estate/hotel'
 
   require 'hotel_reservation/application/controller'
+  require 'hotel_reservation/application/builder/interaction_builder'
   require 'hotel_reservation/application/interaction'
   LIBDIR = File.expand_path(File.dirname(__FILE__))
 end
