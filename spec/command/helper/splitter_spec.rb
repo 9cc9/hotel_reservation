@@ -2,49 +2,64 @@
 require 'spec_helper'
 
 module Command
-  describe Delete do
-    include Helper::Http
+  module Helper
+    describe Splitter do
 
-    context '#handle' do
-      before do
-        initialize_connection
-        @command = Delete.new
-        @packet = Packet::PacketFactory.new.get_instance_by_xml(
-            File.open(Background::ROOT+ '/public/xml/delete_resource/request.xml').read)
-      end
+      describe '#initialize' do
+        context 'when input command is quit' do
+          before do
+            @splitter = Splitter.new('quit')
+          end
 
-      context 'when controller has right to delete resource' do
-        before do
-          @metadata = Factory.create(:metadatum, {:audit_status => Util::AUDIT_PASS, :sync_status => Util::BEING_SYNC_STATUS})
-          @metadata.update_attribute(:identifier, 'RESOURCE_IDENTIFIER')
-          @controller = Factory.create(:controller)
-          @controller.update_attribute(:identifier, 'CONTROLLER_IDENTIFIER')
+          it 'should get command type is quit.' do
+            @splitter.command_type.should == 'quit'
+          end
+
+          it 'should get empty argument.' do
+            @splitter.argument.should == ''
+          end
         end
 
-        it 'should get a normal response.' do
-          @command.handle(@packet)
-          Model::Metadatum.find_by_identifier('RESOURCE_IDENTIFIER').status.should == Util::DELETED_STATUS
+        context 'when input command is help' do
+          before do
+            @splitter = Splitter.new('help')
+          end
+
+          it 'should get command type is help.' do
+            @splitter.command_type.should == 'help'
+          end
+
+          it 'should get empty argument.' do
+            @splitter.argument.should == ''
+          end
         end
-      end
 
-      context 'when controller does not have the right to delete the resource' do
-        before do
-          @metadata = Factory.create(:traffic_metadatum)
-          @metadata.update_attribute(:identifier, 'RESOURCE_IDENTIFIER')
+        context 'when input command is reserve' do
+          before do
+            @splitter = Splitter.new('Rewards: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)')
+          end
 
-          Factory.create(:controller).update_attribute(:identifier, 'CONTROLLER_IDENTIFIER')
+          it 'should get command type is reserve.' do
+            @splitter.command_type.should == 'reserve'
+          end
+
+          it 'should get arguments.' do
+            @splitter.argument.should == 'Rewards: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)'
+          end
         end
 
-        it 'should get a error response.' do
-          expect { @command.handle(@packet) }.to raise_error(CustomException::AccessFailedError) { |e|
-            e.error_cause.should == '无权限修改该资源！' }
-        end
-      end
+        context "when input command line can't parsed" do
+          before do
+            @splitter = Splitter.new('UnknownMessage')
+          end
 
-      context 'when the resource is not exist' do
-        it 'should get a error response.' do
-          expect { @command.handle(@packet) }.to raise_error(CustomException::AccessFailedError) { |e|
-            e.error_cause.should == '该资源不存在！' }
+          it 'should get command type is reserve.' do
+            @splitter.command_type.should == 'error'
+          end
+
+          it 'should get arguments.' do
+            @splitter.argument.should == ''
+          end
         end
       end
     end

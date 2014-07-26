@@ -1,2 +1,2 @@
-class Help
+class Error
 end
