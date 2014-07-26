@@ -13,7 +13,7 @@ module Command
           end
 
           it 'should get command type is help.' do
-            @splitter.command_type.should == 'help'
+            @splitter.command_type.should == 'help_parameter'
           end
 
           it 'should get empty argument.' do
@@ -27,7 +27,7 @@ module Command
           end
 
           it 'should get command type is reserve.' do
-            @splitter.command_type.should == 'reserve'
+            @splitter.command_type.should == 'reserve_parameter'
           end
 
           it 'should get arguments.' do
@@ -41,7 +41,7 @@ module Command
           end
 
           it 'should get command type is reserve.' do
-            @splitter.command_type.should == 'error'
+            @splitter.command_type.should == 'error_parameter'
           end
 
           it 'should get arguments.' do

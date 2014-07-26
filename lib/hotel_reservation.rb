@@ -12,7 +12,7 @@ module HotelReservation
   require 'hotel_reservation/command/parameter/error_parameter'
   require 'hotel_reservation/command/parameter/help_parameter'
   require 'hotel_reservation/command/parameter/reserve_parameter'
-  require 'hotel_reservation/command/parameter/parameter_factory'
+  require 'hotel_reservation/command/factory/parameter_factory'
 
   require 'hotel_reservation/estate/hotel'
 
