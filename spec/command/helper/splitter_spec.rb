@@ -6,19 +6,6 @@ module Command
     describe Splitter do
 
       describe '#initialize' do
-        context 'when input command is quit' do
-          before do
-            @splitter = Splitter.new('quit')
-          end
-
-          it 'should get command type is quit.' do
-            @splitter.command_type.should == 'quit'
-          end
-
-          it 'should get empty argument.' do
-            @splitter.argument.should == ''
-          end
-        end
 
         context 'when input command is help' do
           before do

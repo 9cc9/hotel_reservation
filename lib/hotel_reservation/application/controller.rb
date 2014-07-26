@@ -1,8 +1,8 @@
 module Application
   class Controller
+    # @param [Command::Base] command
     def handle_command(command)
-      Command::CommandFactory.new.get(command)
-
+      parameter = ParameterFactory.new.get(command_line)
     end
   end
 end

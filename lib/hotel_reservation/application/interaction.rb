@@ -1,9 +1,10 @@
+require 'hotel_reservation/command/parameter/parameter_factory'
+
 module Application
   class Interaction
     def initialize
       @controller = Controller.new
     end
-
 
     def start
       run
@@ -15,9 +16,10 @@ module Application
 
     private
     def run
-      while command = gets
-        puts "From stdin: #{command}"
-        @controller.handle_command(command)
+      while command_line = gets
+        Log::Record.logger.debug "From stdin: #{command_line}"
+        break if 'quit'.eql?(command_line)
+        @controller.handle_command(parameter)
       end
     end
   end

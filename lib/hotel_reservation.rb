@@ -4,17 +4,19 @@ module HotelReservation
   require 'active_support/core_ext'
 
   require 'hotel_reservation/utils/configure'
-  require 'hotel_reservation/log/record'
+  require 'hotel_reservation/utils/log/record'
 
   require 'hotel_reservation/command/helper/splitter'
-  require 'hotel_reservation/command/base_command'
-  require 'hotel_reservation/command/error'
-  require 'hotel_reservation/command/help'
-  require 'hotel_reservation/command/quit'
-  require 'hotel_reservation/command/reserve'
-  require 'hotel_reservation/command/command_factory'
+  require 'hotel_reservation/command/parameter/base'
+  require 'hotel_reservation/command/parameter/error_parameter'
+  require 'hotel_reservation/command/parameter/help_parameter'
+  require 'hotel_reservation/command/parameter/reserve_parameter'
+  require 'hotel_reservation/command/parameter/parameter_factory'
 
   require 'hotel_reservation/estate/hotel'
+
+  require 'hotel_reservation/application/controller'
+  require 'hotel_reservation/application/interaction'
   LIBDIR = File.expand_path(File.dirname(__FILE__))
 end
 

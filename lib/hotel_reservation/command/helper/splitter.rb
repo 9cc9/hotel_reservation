@@ -8,7 +8,7 @@ module Command
 
       def initialize(line)
         case line
-          when 'quit', 'help'
+          when 'help'
             @command_type = line
             @argument = ''
           when /^Regular/, /^Rewards/
