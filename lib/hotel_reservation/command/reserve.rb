@@ -1,2 +1,5 @@
-class Reserve
+module Command
+  class Reserve < BaseCommand
+
+  end
 end

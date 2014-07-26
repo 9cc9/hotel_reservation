@@ -1,5 +1,9 @@
 module Application
   class Interaction
+    def initialize
+      @controller = Controller.new
+    end
+
 
     def start
       run
@@ -11,8 +15,9 @@ module Application
 
     private
     def run
-      while line = gets
-        puts "From stdin: #{line}"
+      while command = gets
+        puts "From stdin: #{command}"
+        @controller.handle_command(command)
       end
     end
   end
