@@ -1,9 +1,7 @@
-
 module Application
   class Interaction
-    def initialize(importer)
-      @importer = importer
-      @dispatcher = Dispatcher.new
+    def initialize(importer, exporter, dispatcher)
+      @importer, @exporter, @dispatcher = importer, exporter, dispatcher
     end
 
     def start
@@ -17,7 +15,11 @@ module Application
     private
     def run
       @importer.each do |command_line|
-        @dispatcher.handle_command(command_line)
+        begin
+          @exporter.out @dispatcher.handle_command(command_line)
+        rescue => e
+          @exporter.out e.message
+        end
       end
     end
   end

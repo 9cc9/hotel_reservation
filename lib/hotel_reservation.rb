@@ -4,6 +4,8 @@ module HotelReservation
   require 'active_support/core_ext'
 
   require 'hotel_reservation/utils/configure'
+  require 'hotel_reservation/utils/exception/exception_methods'
+  require 'hotel_reservation/utils/specification/abstract'
   require 'hotel_reservation/utils/log/record'
   require 'hotel_reservation/utils/importer/text_importer'
   require 'hotel_reservation/utils/exporter/standard_exporter'

@@ -3,6 +3,8 @@ module Command
 
     # Convert input line to type and argument
     class Splitter
+      include Utils::ExceptionMethods
+
       attr_reader :command_type,
                   :argument
 
@@ -15,8 +17,7 @@ module Command
             @command_type = 'reserve'
             @argument = line
           else
-            @command_type = 'error'
-            @argument = ''
+            illegally_spelling(line)
         end
       end
     end
