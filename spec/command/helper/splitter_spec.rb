@@ -36,16 +36,8 @@ module Command
         end
 
         context "when input command line can't parsed" do
-          before do
-            @splitter = Splitter.new('UnknownMessage')
-          end
-
-          it 'should get command type is reserve.' do
-            @splitter.command_type.should == 'error'
-          end
-
-          it 'should get arguments.' do
-            @splitter.argument.should == ''
+          it 'should get exception.' do
+            expect { Splitter.new('UnknownMessage') }.to raise_error(Utils::ExceptionMethods::IllegalInputError)
           end
         end
       end

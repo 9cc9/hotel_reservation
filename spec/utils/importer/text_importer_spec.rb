@@ -9,6 +9,10 @@ module Utils
     end
 
     describe '#each' do
+      before do
+        TextImporter::BASE_PATH =  HotelReservation::ROOT + '/spec/fixtures/'
+      end
+
       it 'should get logger configure.' do
         @importer.each do |line|
           params = line.split(':')

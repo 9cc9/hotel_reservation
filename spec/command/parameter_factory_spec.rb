@@ -19,8 +19,7 @@ module Command
       context 'when command_line is unknown' do
         it 'should get Command::Error instance.' do
           unknown_argument = 'UnknownMessage'
-          command = @factory.get(unknown_argument)
-          command.class.should == Command::Parameter::ErrorParameter
+          expect { @factory.get(unknown_argument) }.to raise_error(Utils::ExceptionMethods::IllegalInputError)
         end
       end
     end

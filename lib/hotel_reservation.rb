@@ -12,7 +12,6 @@ module HotelReservation
 
   require 'hotel_reservation/command/helper/splitter'
   require 'hotel_reservation/command/parameter/base'
-  require 'hotel_reservation/command/parameter/error_parameter'
   require 'hotel_reservation/command/parameter/help_parameter'
   require 'hotel_reservation/command/parameter/reserve_parameter'
   require 'hotel_reservation/command/factory/parameter_factory'
