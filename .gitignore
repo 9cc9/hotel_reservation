@@ -9,6 +9,7 @@ _yardoc
 coverage
 doc/
 vendor/
+.idea/
 lib/bundler/man
 pkg
 rdoc
