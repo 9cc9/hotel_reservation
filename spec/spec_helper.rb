@@ -15,7 +15,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require_relative "../lib/hotel_reservation"
+require_relative '../lib/hotel_reservation'
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience

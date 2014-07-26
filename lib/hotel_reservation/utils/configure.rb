@@ -1,8 +1,11 @@
+require 'yaml'
+require 'singleton'
+
 module Utils
   class Configure
     include Singleton
 
-    BASE_PATH = HotelReservation::ROOT + "/config/" #File.dirname(__FILE__) + '/../../config/'
+    BASE_PATH = HotelReservation::ROOT + '/config/'
     LOG_APPEND_PATH= 'log.yml'
 
     def log_config

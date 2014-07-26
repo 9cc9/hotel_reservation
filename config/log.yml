@@ -1,2 +1,2 @@
-level: debug
-file_name: "log/log"
+:level: debug
+:file_name: "log/log"

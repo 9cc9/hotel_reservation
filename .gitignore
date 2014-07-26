@@ -10,6 +10,7 @@ coverage
 doc/
 vendor/
 .idea/
+log/*
 lib/bundler/man
 pkg
 rdoc

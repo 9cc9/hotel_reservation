@@ -30,8 +30,8 @@ module Log
     def self.get_instance
       file = open(file_name, File::WRONLY | File::APPEND | File::CREAT)
       file.sync = true  # Logger without buffer
-      logger = Logger.new(MultiIO.new(file, STDIN), 'daily')
-      logger.level = levels[configure['level'].to_sym]
+      logger = Logger.new(MultiIO.new(file), 'daily')
+      logger.level = levels[Utils::Configure.instance.log_config[:level].to_sym]
       logger.datetime_format = '%Y-%m-%d %H:%M:%S'
       logger.formatter = proc { |severity, datetime, _, msg|
         "[#{datetime}]: [#{severity}]#{msg}\n"
@@ -40,7 +40,7 @@ module Log
     end
 
     def self.file_name
-      "#{Util::Configure.instance.log_config['file_name']}"
+      "#{Utils::Configure.instance.log_config[:file_name]}"
     end
 
     def self.levels

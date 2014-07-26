@@ -16,10 +16,10 @@ module Application
 
     private
     def run
-      while command_line = gets
-        Log::Record.logger.debug "From stdin: #{command_line}"
-        break if 'quit'.eql?(command_line)
-        @controller.handle_command(parameter)
+      while line = gets
+        Log::Record.logger.debug "From stdin: #{line}"
+        break if 'quit'.eql?(line.chomp) || 'exit'.eql?(line.chomp)
+        @controller.handle_command(line)
       end
     end
   end

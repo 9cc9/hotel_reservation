@@ -1,4 +1,4 @@
-require "hotel_reservation/version"
+require 'hotel_reservation/version'
 
 module HotelReservation
   require 'active_support/core_ext'
