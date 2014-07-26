@@ -12,8 +12,8 @@ module Property
 
         it 'should auto set value by params.' do
           toll_station = TollStationBuilder.build(@prices)
-          toll_station.reward_toll.class.should == Toll
-          toll_station.regular_toll.class.should == Toll
+          toll_station.tolls[:regular].class.should == Toll
+          toll_station.tolls[:rewards].class.should == Toll
         end
       end
     end

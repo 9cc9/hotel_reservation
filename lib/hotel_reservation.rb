@@ -27,6 +27,7 @@ module HotelReservation
   require 'hotel_reservation/property/estate/hotel_builder'
   require 'hotel_reservation/property/estate/hotel_controller'
 
+  require 'hotel_reservation/application/info_collector'
   require 'hotel_reservation/application/dispatcher'
   require 'hotel_reservation/application/builder/interaction_builder'
   require 'hotel_reservation/application/interaction'

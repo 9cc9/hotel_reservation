@@ -1,9 +1,9 @@
 module Application
   class InfoCollector
-    attr_reader :toll_station
+    attr_reader :hotel_info
 
     def initialize
-      # @toll_station
+      @hotel_info = Property::Estate::HotelController.new(Utils::Configure.instance.hotel_config[:hotels])
     end
   end
 end

@@ -1,9 +1,10 @@
 module Application
   class Dispatcher
     def initialize
+      @collector = InfoCollector.new
       @commands = {
           :help => Command::Help.new,
-          :reserve => Command::Reserve.new
+          :reserve => Command::Reserve.new(@collector.hotel_info)
       }
     end
 

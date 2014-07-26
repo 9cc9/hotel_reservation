@@ -1,8 +1,8 @@
 module Service
   module Builder
     class ChargeServiceBuilder
-      def self.build(custom_type)
-
+      def self.build(hotel_info)
+        ChargeService.new(hotel_info)
       end
     end
   end

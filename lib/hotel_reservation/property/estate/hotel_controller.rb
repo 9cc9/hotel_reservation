@@ -1,11 +1,15 @@
 module Property
   module Estate
     class HotelController
-      def initialize(configure)
+      attr_reader :hotels
 
+      def initialize(row_prices)
+        @hotels = row_prices.collect do |hotel_name, prices|
+          HotelBuilder.build(hotel_name, prices)
+        end
       end
 
-      def price(custom_type, hotel_name)
+      def get_cheapest_hotel(parameter)
 
       end
     end
