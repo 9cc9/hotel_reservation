@@ -1,7 +1,7 @@
 module Command
   module Parameter
     class Base
-      attr_reader :output,
+      attr_reader :info,
                   :type
 
       def initialize(type, argument)

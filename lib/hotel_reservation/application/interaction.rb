@@ -3,7 +3,7 @@ module Application
   class Interaction
     def initialize(importer)
       @importer = importer
-      @controller = Dispatcher.new
+      @dispatcher = Dispatcher.new
     end
 
     def start
@@ -17,7 +17,7 @@ module Application
     private
     def run
       @importer.each do |command_line|
-        @controller.handle_command(command_line)
+        @dispatcher.handle_command(command_line)
       end
     end
   end

@@ -6,6 +6,7 @@ module HotelReservation
   require 'hotel_reservation/utils/configure'
   require 'hotel_reservation/utils/log/record'
   require 'hotel_reservation/utils/importer/text_importer'
+  require 'hotel_reservation/utils/exporter/standard_exporter'
 
   require 'hotel_reservation/command/helper/splitter'
   require 'hotel_reservation/command/parameter/base'
