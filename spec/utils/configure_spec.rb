@@ -14,5 +14,10 @@ module Utils
       end
     end
 
+    describe '#hotel_config' do
+      it 'should get configure of hotels.' do
+        @configure.hotel_config[:hotels].size.should == 3
+      end
+    end
   end
 end

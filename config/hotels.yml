@@ -1,10 +1,27 @@
 # 报文恶意注册拦截配置
----
+   
 :hotels:
-- :Lakewood
-  - 3
-- :Bridgewood
-  - 4
-- :Ridgewood
-  - 5
-
+  :Lakewood:
+    :rating: 3
+    :Regular:
+      weekday: 110
+      weekend: 90
+    :Rewards:
+      weekday: 80
+      weekend: 80
+  :Bridgewood:
+    :rating: 4
+    :Regular:
+      weekday: 160
+      weekend: 60
+    :Rewards:
+      weekday: 110
+      weekend: 50
+  :Ridgewood:
+    :rating: 5
+    :Regular:
+      weekday: 220
+      weekend: 150
+    :Rewards:
+      weekday: 100
+      weekend: 40
