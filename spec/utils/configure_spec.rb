@@ -17,10 +17,11 @@ module Utils
     describe '#hotel_config' do
       it 'should get configure of hotels.' do
         @configure.hotel_config[:hotels].size.should == 3
-        # @configure.hotel_config[:hotels].each do |key, value|
-        #   p key
-        #   p value
-        # end
+        p @configure.hotel_config[:hotels]
+        @configure.hotel_config[:hotels].each do |key, value|
+          p key
+          p value
+        end
       end
     end
   end

@@ -20,7 +20,12 @@ module HotelReservation
   require 'hotel_reservation/command/help'
   require 'hotel_reservation/command/factory/parameter_factory'
 
-  require 'hotel_reservation/estate/hotel'
+  require 'hotel_reservation/property/fee/toll'
+  require 'hotel_reservation/property/fee/toll_station'
+  require 'hotel_reservation/property/fee/toll_station_builder'
+  require 'hotel_reservation/property/estate/hotel'
+  require 'hotel_reservation/property/estate/hotel_builder'
+  require 'hotel_reservation/property/estate/hotel_controller'
 
   require 'hotel_reservation/application/dispatcher'
   require 'hotel_reservation/application/builder/interaction_builder'

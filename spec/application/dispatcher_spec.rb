@@ -14,7 +14,7 @@ module Application
       end
 
       it 'should match handler.' do
-        @dispatcher.instance_variable_get(:@commands)[:help].should_receive(:handle)
+        expect(@dispatcher.instance_variable_get(:@commands)[:help]).to receive(:handle)
         @dispatcher.handle_command(@command_line)
       end
     end
