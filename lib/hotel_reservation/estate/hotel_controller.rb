@@ -7,14 +7,5 @@ module Estate
         HotelBuilder.build(hotel_name, prices)
       end
     end
-
-    def get_cheapest_hotel(parameter)
-      hotel_prices = Hash.new.tap do |prices|
-        @hotels.each do |hotel|
-          prices[hotel.name] = [hotel.total_price(parameter.custom_type, parameter.days), hotel.rating]
-        end
-      end
-      hotel_prices.sort_by { |price| price.second.last }.reverse.min_by { |v| v.second.first }.first
-    end
   end
 end
