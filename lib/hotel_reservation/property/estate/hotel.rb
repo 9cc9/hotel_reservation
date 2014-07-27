@@ -1,7 +1,7 @@
 module Property
   module Estate
     class Hotel
-      delegate :price,:to => :toll_station
+      delegate :total_price, :to => :toll_station
 
       attr_reader :name,
                   :rating,

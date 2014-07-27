@@ -12,7 +12,7 @@ module Command
           end
 
           it 'should parse to custom type.' do
-            @parameter.custom_type.should == 'Regular'
+            @parameter.custom_type.should == :regular
           end
 
           it 'should parse to correct days.' do
@@ -24,11 +24,11 @@ module Command
 
         context 'when days of line is empty.' do
           before do
-            @parameter = ReserveParameter.new('reserve', 'Regular:')
+            @parameter = ReserveParameter.new('reserve', 'Rewards:')
           end
 
           it 'should parse to custom type.' do
-            @parameter.custom_type.should == 'Regular'
+            @parameter.custom_type.should == :rewards
           end
 
           it 'should get empty days.' do

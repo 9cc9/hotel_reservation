@@ -21,7 +21,7 @@ module Command
 
       def parse_custom_type(row_type)
         is_valid_type?(CUSTOM_TYPES.include?(row_type), row_type)
-        row_type
+        row_type.underscore.to_sym
       end
 
       def parse_days(row_days)

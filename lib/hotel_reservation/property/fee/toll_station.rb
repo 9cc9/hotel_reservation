@@ -1,9 +1,8 @@
-
 module Property
   module Fee
 
     # 收费站
-  class TollStation
+    class TollStation
       attr_reader :tolls
 
       def initialize(regular_toll, reward_toll)

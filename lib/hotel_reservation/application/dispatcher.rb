@@ -4,7 +4,7 @@ module Application
       @collector = InfoCollector.new
       @commands = {
           :help => Command::Help.new,
-          :reserve => Command::Reserve.new(@collector.hotel_info)
+          :reserve => Command::Reserve.new(@collector.hotel_controller)
       }
     end
 
