@@ -13,8 +13,10 @@ module Property
         }
       end
 
-      def price(custom_type, days)
-
+      def total_price(custom_type, days)
+        days.sum do |day|
+          @tolls[custom_type].price(day.wday)
+        end
       end
     end
   end
