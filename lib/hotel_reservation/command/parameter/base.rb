@@ -5,7 +5,7 @@ module Command
                   :type
 
       def initialize(type, argument)
-        @type = type
+        @type = type.to_sym
       end
     end
   end

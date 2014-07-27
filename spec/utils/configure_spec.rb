@@ -16,12 +16,7 @@ module Utils
 
     describe '#hotel_config' do
       it 'should get configure of hotels.' do
-        @configure.hotel_config[:hotels].size.should == 3
-        p @configure.hotel_config[:hotels]
-        @configure.hotel_config[:hotels].each do |key, value|
-          p key
-          p value
-        end
+        @configure.hotel_config[:hotels].size.should eq 3
       end
     end
   end

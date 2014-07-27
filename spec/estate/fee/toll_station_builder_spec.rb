@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-module Property
+module Estate
   module Fee
     describe TollStationBuilder do
 
@@ -12,8 +12,8 @@ module Property
 
         it 'should auto set value by params.' do
           toll_station = TollStationBuilder.build(@prices)
-          toll_station.tolls[:regular].class.should == Toll
-          toll_station.tolls[:rewards].class.should == Toll
+          toll_station.tolls[:regular].class.should eq Toll
+          toll_station.tolls[:rewards].class.should eq Toll
         end
       end
     end

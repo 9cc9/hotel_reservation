@@ -1,6 +1,6 @@
 module Command
   class Reserve < Base
-    # @param [Property::Estate::HotelController] hotel_controller 宾馆信息
+    # @param [Estate::HotelController] hotel_controller 宾馆信息
     def initialize(hotel_controller)
       @hotel_controller = hotel_controller
     end

@@ -10,7 +10,7 @@ module Utils
 
     describe '#each' do
       before do
-        TextImporter::BASE_PATH =  HotelReservation::ROOT + '/spec/fixtures/'
+        TextImporter::DATA_BASE_PATH =  HotelReservation::ROOT + '/spec/fixtures/'
       end
 
       it 'should get logger configure.' do

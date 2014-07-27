@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-module Property
+module Estate
   module Fee
     describe TollStation do
       before do

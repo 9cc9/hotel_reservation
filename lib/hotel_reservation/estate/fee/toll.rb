@@ -1,5 +1,5 @@
 # 价目
-module Property
+module Estate
   module Fee
     class Toll
       attr_reader :weekday, # work day
