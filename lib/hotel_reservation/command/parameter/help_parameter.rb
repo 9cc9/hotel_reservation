@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Command
   module Parameter
     class HelpParameter < Base
