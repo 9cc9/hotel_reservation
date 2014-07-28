@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['cyx199021@163.com']
   spec.description   = %q{Hotel reservation}
   spec.summary       = %q{Help online customer find the cheapest hotel.}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/9cc9/hotel_reservation'
   spec.license       = 'MIT'
 
   spec.files         = FileList['lib/**/*.rb', 'lib/hotel_reservation.rb', 'spec/**/*', 'config/*'].to_a

@@ -8,6 +8,7 @@ module Command
       attr_reader :command_type,
                   :argument
 
+      # TODO: /^\[([A-Z_a-z]*)\]/.match(line)
       def initialize(line)
         case line
           when 'help'

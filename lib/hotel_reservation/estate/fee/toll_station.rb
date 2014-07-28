@@ -2,13 +2,11 @@ module Estate
   module Fee
 
     class TollStation
+      # [Hash]:regular, :rewards
       attr_reader :tolls
 
-      def initialize(regular_toll, reward_toll)
-        @tolls = {
-            :regular => regular_toll,
-            :rewards => reward_toll
-        }
+      def initialize(tolls)
+        @tolls = tolls
       end
 
       def total_price(custom_type, days)
