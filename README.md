@@ -3,11 +3,8 @@
 Help online customer find the cheapest hotel.
 
 Interaction is the main class to run, which get data from importer. 
-
 Import data from /resources/data, and parse it to a suitable parameter.
-
 Then, special parameter is distributed by command pattern, it will trigger matched service to run.
-
 Finally, service generate response to viewer.
 
 ## Installation
