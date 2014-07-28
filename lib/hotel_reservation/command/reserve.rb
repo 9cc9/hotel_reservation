@@ -1,6 +1,6 @@
 module Command
   class Reserve < Base
-    # @param [Estate::HotelController] hotel_info 宾馆信息
+    # @param [Estate::HotelController] hotel_info
     def initialize(hotel_info)
       @hotel_info = hotel_info
     end

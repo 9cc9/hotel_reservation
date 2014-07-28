@@ -1,8 +1,7 @@
-# 价目
 module Estate
   module Fee
     class Toll
-      attr_reader :weekday, # work day
+      attr_reader :weekday,
                   :weekend
 
       def initialize(params)

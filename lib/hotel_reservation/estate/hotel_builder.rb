@@ -1,6 +1,7 @@
 module Estate
   class HotelBuilder
-    # From configure
+
+    # Build from configure
     def self.build(name, arguments)
       rating = arguments[:rating]
       toll_station = Fee::TollStationBuilder.build(extract_arguments(arguments))

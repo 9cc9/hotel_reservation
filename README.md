@@ -1,24 +1,23 @@
 # HotelReservation
 
-TODO: Write a gem description
+Help online customer find the cheapest hotel.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Into directory of this gem, and then execute:
 
-    gem 'hotel_reservation'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hotel_reservation
+    $ bundle install
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ ruby bin/server.rb
+
+### Configuration
+
+The following is a partial list of the keys that are read from the YAML file:
+
+* `log` - a basic configure of log level and file location.
+* `hotels` - an array of hotel information, you can configure hotel basic info by this file.
 
 ## Contributing
 

@@ -8,7 +8,7 @@ module Application
       }
     end
 
-    # @return [String] 输出到界面的提示信息
+    # @return [String] Output info to viewer
     def handle_command(command_line)
       parameter = Command::ParameterFactory.new.get(command_line)
       @commands[parameter.type].handle(parameter)
