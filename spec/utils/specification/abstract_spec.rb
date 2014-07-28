@@ -11,13 +11,13 @@ module Utils
         end
       end
 
-      it "raises NotImplementedError." do
+      it 'raises NotImplementedError.' do
         proc {
           @klass.new.foo
         }.should raise_error(NotImplementedError)
       end
 
-      it "can be overridden." do
+      it 'can be overridden.' do
         subclass = Class.new(@klass) do
           def foo(arg1)
             arg1

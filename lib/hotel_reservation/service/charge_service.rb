@@ -5,7 +5,8 @@ module Service
     end
 
     def get_cheapest_hotel(parameter)
-      generate_pipe(parameter).run(@hotel_info.hotels).first.name
+      sorted_hotels = generate_pipe(parameter).run(@hotel_info.hotels)
+      sorted_hotels[0].name
     end
 
     private
