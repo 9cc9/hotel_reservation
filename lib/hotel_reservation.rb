@@ -28,6 +28,10 @@ module HotelReservation
   require 'hotel_reservation/command/help'
   require 'hotel_reservation/command/factory/parameter_factory'
 
+  require 'hotel_reservation/service/pipe/base_pipe'
+  require 'hotel_reservation/service/pipe/source_pipe'
+  require 'hotel_reservation/service/pipe/sort_pipe'
+  require 'hotel_reservation/service/pipe/reverse_pipe'
   require 'hotel_reservation/service/charge_service'
 
   require 'hotel_reservation/application/info_collector'
