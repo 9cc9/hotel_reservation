@@ -1,7 +1,6 @@
 module Estate
   module Fee
 
-    # 收费站
     class TollStation
       attr_reader :tolls
 
