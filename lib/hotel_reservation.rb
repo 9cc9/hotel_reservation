@@ -8,6 +8,7 @@ module HotelReservation
   require 'hotel_reservation/utils/specification/abstract'
   require 'hotel_reservation/utils/log/record'
   require 'hotel_reservation/utils/importer/text_importer'
+  require 'hotel_reservation/utils/importer/standard_importer'
   require 'hotel_reservation/utils/exporter/standard_exporter'
 
   require 'hotel_reservation/estate/fee/toll'
